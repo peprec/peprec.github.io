@@ -45,7 +45,7 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Dashboard</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">The training dataset numbers of the model training on 06.04.2023</li>
+                            <li class="breadcrumb-item active">The training dataset numbers of the model training on 27.04.2023</li>
                         </ol>
                         <div class="row">
 
@@ -53,50 +53,29 @@
                                 <div class="card bg-primary text-white mb-4"> <!-- warning , danger -->
                                     <div class="card-body"><b>Products</b><br></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        1.237.984<br>
+                                        418<br>
                                         <a class="small text-white stretched-link" href="#">Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4"> <!-- warning , danger -->
-                                    <div class="card-body"><b>Users</b><br></div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        7.894.573<br>
-                                        <a class="small text-white stretched-link" href="#">Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body"><b>User-based</b> recommendations</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        1.234.587<br>
-                                        <a class="small text-white stretched-link" href="#">Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-success text-white mb-4"> <!-- warning , danger -->
-                                    <div class="card-body"><b>Item-based</b> recommendations</div>
+                                    <div class="card-body"><b>Users</b><br></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        2.657.342<br>
+                                        129<br>
                                         <a class="small text-white stretched-link" href="#">Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-                            
+                      
                             
                         </div>
 
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Performance results of the model training on 06.04.2023</li>
+                            <li class="breadcrumb-item active">Performance results of the model training on 27.04.2023</li>
                         </ol>
                         <div class="row">
                            
@@ -104,7 +83,7 @@
                                 <div class="card mb-4">
                                     <div class="card-header">
                                         <i class="fas fa-chart-bar me-1"></i>
-                                        <b>precision@k</b> 
+                                        <b>Precision@k</b> (Success Rate)
                                     </div>
                                     <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
                                 </div>
@@ -114,7 +93,7 @@
                                 <div class="card mb-4">
                                     <div class="card-header">
                                         <i class="fas fa-chart-bar me-1"></i>
-                                        <b>RMSE</b> 
+                                        <b>RMSE</b> (Error Rate)
                                     </div>
                                     <div class="card-body"><canvas id="myBarChart2" width="100%" height="40"></canvas></div>
                                 </div>
@@ -127,17 +106,12 @@
                                 Performance Details
                             </div>
                             <div class="card-body">
+                                For this dataset, best performance values of the models are shown in <b>bold</b>.
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Model-ID</th>
+                                            <th>Model</th>
                                             <th>Recommendation Type</th>
-                                            <th>Model Name</th>
-                                            <th>Purchase Events</th>
-                                            <th>View Events</th>
-                                            <th>Add-to-Cart Events</th>
-                                            <th>Products in Events</th>
-                                            <th>Users in Events</th>
                                             <th>Precision@k</th>
                                             <th>Recall@k</th>
                                             <th>RMSE</th>
@@ -146,58 +120,52 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <th>XYZ_MF_20230406</th>
+                                            <th>Matrix Factorization</th>
                                             <th>user-based</th>
-                                            <th>matrix factorization</th>
-                                            <th>4.597</th>
-                                            <th>9.346</th>
-                                            <th>5.244</th>
-                                            <th>1.347</th>
-                                            <th>3.863</th>
-                                            <th>0.82</th>
-                                            <th>0.85</th>
-                                            <th>0.42</th>
-                                            <th>0.44</th>
+                                            <th><b>0.811594</b></th>
+                                            <th><b>0.801274</b></th>
+                                            <th><b>0.555</b></th>
+                                            <th><b>0.462</b></th>
                                         </tr>
                                         <tr>
-                                            <th>XYZ_MF_20230406</th>
+                                            <th>CoClustering</th>
                                             <th>user-based</th>
-                                            <th>matrix factorization</th>
-                                            <th>4.597</th>
-                                            <th>9.346</th>
-                                            <th>5.244</th>
-                                            <th>1.347</th>
-                                            <th>3.863</th>
-                                            <th>0.82</th>
-                                            <th>0.85</th>
-                                            <th>0.42</th>
-                                            <th>0.44</th>
+                                            <th>0.782609</th>
+                                            <th>0.772288</th>
+                                            <th>0.693</th>
+                                            <th>0.593</th>
                                         </tr>
                                         <tr>
-                                            <th>XYZ_MF_20230406</th>
+                                            <th>KNN_UB</th>
                                             <th>user-based</th>
-                                            <th>matrix factorization</th>
-                                            <th>4.597</th>
-                                            <th>9.346</th>
-                                            <th>5.244</th>
-                                            <th>1.347</th>
-                                            <th>3.863</th>
-                                            <th>0.82</th>
-                                            <th>0.85</th>
-                                            <th>0.42</th>
-                                            <th>0.44</th>
+                                            <th><b>0.811594</b></th>
+                                            <th><b>0.801274</b></th>
+                                            <th>0.670</th>
+                                            <th>0.555</th>
                                         </tr>
+                                        <tr>
+                                            <th>KNN_IB</th>
+                                            <th>user-based</th>
+                                            <th><b>0.811594</b></th>
+                                            <th><b>0.801274</b></th>
+                                            <th>0.745</th>
+                                            <th>0.642</th>
+                                        </tr>
+                                        <tr>
+                                            <th>Baseline</th>
+                                            <th>-</th>
+                                            <th>0.724638</th>
+                                            <th>0.648858</th>
+                                            <th>0.893</th>
+                                            <th>0.688</th>
+                                        </tr>
+                                        
+                                       
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th>Customer</th>
-                                            <th>Recommendation Type</th>
                                             <th>Model</th>
-                                            <th>Purchase Events</th>
-                                            <th>View Events</th>
-                                            <th>Add-to-Cart Events</th>
-                                            <th>Products in Events</th>
-                                            <th>Users in Events</th>
+                                            <th>Recommendation Type</th>
                                             <th>Precision@k</th>
                                             <th>Recall@k</th>
                                             <th>RMSE</th>
