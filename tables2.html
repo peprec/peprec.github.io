@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>User Based Recommendations</title>
+        <title>Item Based Recommendations</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -50,10 +50,10 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">User Based Recommendations</h1>
+                        <h1 class="mt-4">Item Based Recommendations</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item active">User Based Recommendations</li>
+                            <li class="breadcrumb-item active">Item Based Recommendations</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
@@ -76,41 +76,30 @@
                                     <thead>
                                         <tr>
                                             <th>id</th>
-                                            <th>UserID</th>
-                                            <th>Trx: Purchased</th>
-                                            <th>Trx: In_Cart</th>
-                                            <th>Trx: Viewed</th>
-                                            <th>Rec: KNN_UserBased</th>
-                                            <th>Rec: MatrixFactorization</th>
-                                            <th>Rec: CoClustering</th>
+                                            <th>Product</th>
+                                            <th>Category</th>
+                                            <th>Rec: Top</th>
+                                            <th>Rec: TopInCategory</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>1</td>
-                                            <td>user_120687377</td>
                                             <td> <a href=https://www.amazon.com/CUSHIONAIRE-Womens-Slide-Sandals-Brown/dp/B075PCJWXY/ref=sr_1_1?c=ts&keywords=Women%27s+Sandals&pd_rd_r=53b3236f-6ab0-4667-a9a8-864e9d78633a&pd_rd_w=E8bw3&pd_rd_wg=F37qP&pf_rd_p=7ba0d83e-f1ed-434a-8980-d35970c55bb3&pf_rd_r=3AHB08V09KCZY17DTJ9F&qid=1682594239&refinements=p_36%3A-5000&rnid=2661611011&s=apparel&sr=1-1&ts_id=679425011><img src="https://m.media-amazon.com/images/I/51IgLptkkHL._AC_UL1261_.jpg" width="100" height="100"></a> </td>
-                                            <td> <a href=https://www.amazon.com/Cushionaire-Womens-recovery-cloud-Comfort/dp/B09CK13W3R/ref=sr_1_13?c=ts&keywords=Women%27s+Slide+Sandals&qid=1682594560&s=apparel&sr=1-13&ts_id=10509649011 ><img src="https://m.media-amazon.com/images/I/61wHDZ0XFWL._AC_UL1500_.jpg" width="100" height="100"></a> </td>
+                                            <!-- <td> <a href=https://www.amazon.com/Cushionaire-Womens-recovery-cloud-Comfort/dp/B09CK13W3R/ref=sr_1_13?c=ts&keywords=Women%27s+Slide+Sandals&qid=1682594560&s=apparel&sr=1-13&ts_id=10509649011 ><img src="https://m.media-amazon.com/images/I/61wHDZ0XFWL._AC_UL1500_.jpg" width="100" height="100"></a> </td>--> 
+                                            <th>Women Footwear</th>
+                                            <td> <a href=https://www.amazon.com/Infinity-CLOUDRAY-Weatherproof-Oscillation-Hydroponics/dp/B0B179135B/?_encoding=UTF8&pd_rd_w=Bm6W2&content-id=amzn1.sym.345ade0e-e021-4dab-a1e1-d299481e27a3&pf_rd_p=345ade0e-e021-4dab-a1e1-d299481e27a3&pf_rd_r=9042HPY1YF1F5YWZTYR8&pd_rd_wg=gv8R7&pd_rd_r=98633689-a5f8-4411-9f2a-e2c819c6e58c&ref_=pd_gw_exports_top_sellers_unrec><img src="https://m.media-amazon.com/images/I/71htzUATgcL._AC_SX679_.jpg" width="100" height="100"></a> </td> 
                                             <td> <a href=https://www.amazon.com/MUK-LUKS-Womens-Shayna-Turf-Black/dp/B07LBQW3ZR/ref=sxin_17_ac_d_rm?ac_md=1-1-d29tZW4ncyBzYW5kYWxzIHNpemUgOA%3D%3D-ac_d_rm_rm_rm&c=ts&content-id=amzn1.sym.b09913c7-88ee-4b06-b977-3fd4ebd29a25%3Aamzn1.sym.b09913c7-88ee-4b06-b977-3fd4ebd29a25&cv_ct_cx=Women%27s+Sandals&keywords=Women%27s+Sandals&pd_rd_i=B07LBQW3ZR&pd_rd_r=1d8b8d40-d6bb-4fdd-b6f6-fc4c7025881a&pd_rd_w=5Y1ri&pd_rd_wg=LoSEm&pf_rd_p=b09913c7-88ee-4b06-b977-3fd4ebd29a25&pf_rd_r=6QF0AE0NN3XE1C510AZH&qid=1682594615&s=apparel&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=1-2-7d9bfb42-6e38-4445-b604-42cab39e191b&ts_id=679425011><img src="https://m.media-amazon.com/images/I/41GLFnaxGaL._AC_UL1080_.jpg" width="100" height="100"></a> </td>
-                                            <!-- <td> <a href=https://www.amazon.com/Infinity-CLOUDRAY-Weatherproof-Oscillation-Hydroponics/dp/B0B179135B/?_encoding=UTF8&pd_rd_w=Bm6W2&content-id=amzn1.sym.345ade0e-e021-4dab-a1e1-d299481e27a3&pf_rd_p=345ade0e-e021-4dab-a1e1-d299481e27a3&pf_rd_r=9042HPY1YF1F5YWZTYR8&pd_rd_wg=gv8R7&pd_rd_r=98633689-a5f8-4411-9f2a-e2c819c6e58c&ref_=pd_gw_exports_top_sellers_unrec><img src="https://m.media-amazon.com/images/I/71htzUATgcL._AC_SX679_.jpg" width="100" height="100"></a> </td> --> 
-                                            <!-- <td> <a href=https://www.amazon.com/Soda-Womens-Nubuck-Syntheticsandals-numeric_8/dp/B07RZ4L311/ref=sr_1_2?c=ts&keywords=Women%27s+Sandals&qid=1682594663&s=apparel&sr=1-2&ts_id=679425011><img src="https://m.media-amazon.com/images/I/71q-Jp+UEkL._AC_UL1500_.jpg" width="100" height="100"></a> </td> --> 
-                                            <td> <a href=https://www.amazon.com/dp/B0B5FCYMFD/ref=s9_acsd_al_bw_c2_x_2_i?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-20&pf_rd_r=77SKGANBGRTJVY1N1NF8&pf_rd_t=101&pf_rd_p=9370dbd7-a46d-4cf5-ab75-5a205151a5ef&pf_rd_i=97730128011><img src="https://m.media-amazon.com/images/I/61bbxaYe3uL.__AC_SX300_SY300_QL70_FMwebp_.jpg" width="100" height="100"></a> </td>
-                                            <!-- <td> <a href=https://www.amazon.com/CUSHIONAIRE-Next-Womens-Slide-Sandals-Brown/dp/B073XRX1HL/ref=sr_1_3?c=ts&keywords=Women%27s+Sandals&qid=1682594663&s=apparel&sr=1-3&ts_id=679425011><img src="https://m.media-amazon.com/images/I/51Bf1+P1MSS._AC_UL1261_.jpg" width="100" height="100"></a> </td> --> 
-                                            <td> <a href=https://www.amazon.com/Roxy-Womens-Oceanside-Pant-Medium/dp/B00IQJ30YA/ref=sr_1_13?crid=1FSR0TA4PS49E&keywords=pants&qid=1682595263&rnid=2941120011&s=apparel&sprefix=pant%2Caps%2C209&sr=1-13><img src="https://m.media-amazon.com/images/I/61jLNuFKGiL._AC_UL1500_.jpg" width="100" height="100"></a> </td>
-                                            <td> <a href=https://www.amazon.com/CUSHIONAIRE-Womens-Slide-Sandals-Brown/dp/B075PCJWXY/ref=sr_1_1?c=ts&keywords=Women%27s+Sandals&pd_rd_r=53b3236f-6ab0-4667-a9a8-864e9d78633a&pd_rd_w=E8bw3&pd_rd_wg=F37qP&pf_rd_p=7ba0d83e-f1ed-434a-8980-d35970c55bb3&pf_rd_r=3AHB08V09KCZY17DTJ9F&qid=1682594239&refinements=p_36%3A-5000&rnid=2661611011&s=apparel&sr=1-1&ts_id=679425011><img src="https://m.media-amazon.com/images/I/81MdkaqsSnL._AC_UL1500_.jpg" width="100" height="100"></a> </td>
-                                            
+                                                
                                         </tr>
                                     </tbody>
                                     <tfoot>
                                         <tr>
                                             <th>id</th>
-                                            <th>UserID</th>
-                                            <th>Trx: Purchased</th>
-                                            <th>Trx: In_Cart</th>
-                                            <th>Trx: Viewed</th>
-                                            <th>Rec: KNN_UserBased</th>
-                                            <th>Rec: MatrixFactorization</th>
-                                            <th>Rec: CoClustering</th>
+                                            <th>Product</th>
+                                            <th>Category</th>
+                                            <th>Rec: Top</th>
+                                            <th>Rec: TopInCategory</th>
                                         </tr>
                                     </tfoot>
                                 </table>

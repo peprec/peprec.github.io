@@ -54,7 +54,7 @@ function readCSVFile(){
                     var newRow = tbodyEl.insertRow();
 
                     // Split by comma (,) to get column Array
-                    rowColData = rowData[row].split(',');
+                    rowColData = rowData[row].split(';');
 
                     // Loop on the row column Array
                     for (var col = 0; col < rowColData.length; col++) {
@@ -64,14 +64,15 @@ function readCSVFile(){
                          value = rowColData[col];
                          if(value.includes("http")) // an image link
                          {
-                            value = value.replace('[', '');
-                            value = value.replace(']', '');
-                            values = value.split(';');
+                            value = value.replaceAll('[', '');
+                            value = value.replaceAll(']', '');
+                            value = value.replaceAll('\'', '');
+                            values = value.split(',');
                             value = ""
                             for (let i = 0; i < values.length; i++) {
                                 url = values[i]
                                 
-                                value += "<a href="+url+"><img src=\""+url+"\" width=\"100\" height=\"100\" ></a>"
+                                value = value + "<a href=\""+url+"\"><img src=\""+url+"\" width=\"100\" height=\"100\" ></a>"
                             }
                             
                         }
